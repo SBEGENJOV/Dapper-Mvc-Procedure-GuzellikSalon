@@ -1,0 +1,56 @@
+﻿@model IEnumerable<guzellik_salon.Models.HizmetModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni", "EY")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tutar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.odemeDurum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gorevliNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tutar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.odemeDurum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gorevliNo)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "EY", new { id=item.hizmetNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.hizmetNo })
+        </td>
+    </tr>
+}
+
+</table>

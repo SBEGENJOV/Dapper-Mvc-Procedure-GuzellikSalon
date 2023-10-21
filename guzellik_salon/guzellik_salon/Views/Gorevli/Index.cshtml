@@ -1,0 +1,68 @@
+﻿@model IEnumerable<guzellik_salon.Models.GorevliModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni", "EY")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AdSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mesaiDurum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salonNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mesaiDurum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salonNo)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "EY", new { id=item.gorevliNo }) |
+            @Html.ActionLink("Sil", "Delete", new { id = item.gorevliNo })
+        </td>
+    </tr>
+}
+
+</table>
